@@ -244,7 +244,7 @@ CREATE TABLE /*prefix*/inventory (
 	`ipaddress` VARCHAR(255)  NOT NULL ,
 	`content` TEXT NULL ,
 	`creation_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	`modification_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`modification_ts` TIMESTAMP NOT NULL DEFAULT '2017-1-1 00:00:00',
 	PRIMARY KEY (`id`),
 	KEY /*prefix*/inventory_idx1 (`testproject_id`)
 ) DEFAULT CHARSET=utf8; 
@@ -344,7 +344,7 @@ CREATE TABLE /*prefix*/req_versions (
   `author_id` int(10) unsigned default NULL,
   `creation_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modifier_id` int(10) unsigned default NULL,
-  `modification_ts` datetime NOT NULL default CURRENT_TIMESTAMP,
+  `modification_ts` datetime NOT NULL default '2017-1-1 00:00:00',
   `log_message` text,
   PRIMARY KEY  (`id`)
 ) DEFAULT CHARSET=utf8;
@@ -413,7 +413,7 @@ CREATE TABLE /*prefix*/tcversions (
   `author_id` int(10) unsigned default NULL,
   `creation_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updater_id` int(10) unsigned default NULL,
-  `modification_ts` datetime NOT NULL default  CURRENT_TIMESTAMP,
+  `modification_ts` datetime NOT NULL default  '2017-1-1 00:00:00',
   `active` tinyint(1) NOT NULL default '1',
   `is_open` tinyint(1) NOT NULL default '1',
   `execution_type` tinyint(1) NOT NULL default '1' COMMENT '1 -> manual, 2 -> automated',
@@ -611,7 +611,7 @@ CREATE TABLE /*prefix*/req_revisions (
   `author_id` int(10) unsigned default NULL,
   `creation_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modifier_id` int(10) unsigned default NULL,
-  `modification_ts` datetime NOT NULL default  CURRENT_TIMESTAMP,
+  `modification_ts` datetime NOT NULL default  '2017-1-1 00:00:00',
   PRIMARY KEY  (`id`),
   UNIQUE KEY /*prefix*/req_revisions_uidx1 (`parent_id`,`revision`)
 ) DEFAULT CHARSET=utf8;
@@ -635,7 +635,7 @@ CREATE TABLE /*prefix*/req_specs_revisions (
   `author_id` int(10) unsigned default NULL,
   `creation_ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modifier_id` int(10) unsigned default NULL,
-  `modification_ts` datetime NOT NULL default  CURRENT_TIMESTAMP,
+  `modification_ts` datetime NOT NULL default  '2017-1-1 00:00:00',
   PRIMARY KEY  (`id`),
   UNIQUE KEY /*prefix*/req_specs_revisions_uidx1 (`parent_id`,`revision`)
 ) DEFAULT CHARSET=utf8;
